@@ -1,1 +1,1 @@
-# student-project-balances-backend
+# Проект: платформа для портфельного менеджмента
