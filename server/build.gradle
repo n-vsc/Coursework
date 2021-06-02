@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+apply plugin: "application"
+mainClassName = 'dsx.bcv.server.Application'
+
+bootJar {
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.1'
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-test')
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.2.5.RELEASE'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    implementation group: 'ru.tinkoff.invest', name: 'openapi-java-sdk-core', version: '0.4.1'
+    implementation group: 'ru.tinkoff.invest', name: 'openapi-java-sdk-java8', version: '0.4.1'
+    implementation("com.squareup.okhttp3:okhttp:4.3.1")
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.3.50'
+    implementation group: 'com.squareup.okio', name: 'okio', version: '2.2.2'
+    //implementation group: 'org.json', name: 'json', version: '20160810'
+}

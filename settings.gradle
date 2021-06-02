@@ -1,0 +1,3 @@
+rootProject.name = 'student-project-balances-backend'
+
+include 'server', 'marketdata-provider'
